@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{PROJECT_TITLE} - Kevin Jonathan Sinaga</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="engineering-loader">
+                <div class="gear-1">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="gear-2">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="voltage-spark"></div>
+            </div>
+            <p class="loading-text">Loading Project...</p>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <div class="circuit-grid"></div>
+        <canvas id="engineeringCanvas"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.75rem;">
+                    <div class="brand-logo">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <span class="brand-text">KevinJS</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Projects</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero-section">
+        <div class="project-hero-container">
+            <div class="project-hero-content">
+                <div class="project-breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="../index.html#projects">Projects</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>{PROJECT_TITLE}</span>
+                </div>
+
+                <div class="project-header">
+                    <div class="project-badge">{PROJECT_BADGE}</div>
+                    <h1 class="project-title">{PROJECT_TITLE}</h1>
+                    <p class="project-subtitle">{PROJECT_SUBTITLE}</p>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>{PROJECT_DURATION}</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-tags"></i>
+                            <span>{PROJECT_CATEGORY}</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-user"></i>
+                            <span>{PROJECT_ROLE}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-actions">
+                    {DEMO_BUTTON}
+                    {GITHUB_BUTTON}
+                    {DOWNLOAD_BUTTON}
+                </div>
+            </div>
+
+            <div class="project-hero-visual">
+                <div class="project-showcase">
+                    <div class="showcase-image">
+                        <img src="{HERO_IMAGE}" alt="{PROJECT_TITLE}" class="project-main-image">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-overview">
+        <div class="section-container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>Project Overview</h2>
+                    <p class="overview-description">
+                        {PROJECT_DESCRIPTION}
+                    </p>
+                    
+                    <div class="achievements">
+                        {ACHIEVEMENTS}
+                    </div>
+                </div>
+
+                <div class="overview-stats">
+                    {STATS}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="technical-details">
+        <div class="section-container">
+            <h2 class="section-title">Technical Implementation</h2>
+            
+            <div class="tech-grid">
+                {TECHNICAL_DETAILS}
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Showcase -->
+    <section class="features-showcase">
+        <div class="section-container">
+            <h2 class="section-title">Key Features</h2>
+            
+            <div class="features-grid">
+                {FEATURES}
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Process -->
+    <section class="project-process">
+        <div class="section-container">
+            <h2 class="section-title">Development Process</h2>
+            
+            <div class="process-timeline">
+                {PROCESS_TIMELINE}
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="project-gallery">
+        <div class="section-container">
+            <h2 class="section-title">Project Gallery</h2>
+            
+            <div class="gallery-grid">
+                {GALLERY_ITEMS}
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges & Solutions -->
+    <section class="challenges-section">
+        <div class="section-container">
+            <h2 class="section-title">Challenges & Solutions</h2>
+            
+            <div class="challenges-grid">
+                {CHALLENGES}
+            </div>
+        </div>
+    </section>
+
+    <!-- Results & Impact -->
+    <section class="results-section">
+        <div class="section-container">
+            <h2 class="section-title">Results & Impact</h2>
+            
+            <div class="results-content">
+                {RESULTS_CONTENT}
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="project-cta">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2>Interested in This Project?</h2>
+                <p>Let's discuss how we can implement similar solutions for your needs.</p>
+                <div class="cta-actions">
+                    <a href="../index.html#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Get In Touch</span>
+                    </a>
+                    <a href="../index.html#projects" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>View Other Projects</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="brand-info">
+                        <h3>Kevin Jonathan Sinaga</h3>
+                        <p>Electrical Engineering Specialist</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kevin Jonathan Sinaga. All rights reserved.</p>
+                <p>Universitas Sumatera Utara - Electrical Engineering</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/project-details.js"></script>
+    <script src="../js/engineering-effects.js"></script>
+</body>
+</html>

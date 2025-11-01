@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Proyek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a0a0f',
+                        secondary: '#1a1a2e',
+                        tertiary: '#16213e'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .thumbnail.active {
+            border-color: #3b82f6;
+            transform: scale(1.05);
+        }
+        
+        /* Kontainer media untuk gambar dan video */
+        .media-container {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0f172a;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .media-container img,
+        .media-container video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        /* Indikator tipe file */
+        .file-type-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            z-index: 10;
+        }
+        
+        /* Kontrol video */
+        .video-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .video-controls button {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .video-controls button:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-primary text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Judul Proyek -->
+        <header class="text-center mb-12">
+            <h1 id="judulProyek" class="text-4xl font-bold mb-4">Memuat...</h1>
+            <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
+        </header>
+
+        <!-- Tentang Proyek -->
+        <section class="bg-secondary rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Tentang Proyek</h2>
+            <p id="tentangProyek" class="text-gray-300 leading-relaxed">Memuat...</p>
+        </section>
+
+        <!-- Galeri Foto -->
+        <section class="bg-secondary rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-semibold mb-6 text-center">Galeri Media</h2>
+            
+            <!-- Media Utama -->
+            <div class="relative mb-6">
+                <div class="media-container rounded-lg overflow-hidden">
+                    <div id="mainMedia" class="w-full h-full flex items-center justify-center">
+                        <!-- Media akan dimuat di sini -->
+                    </div>
+                    
+                    <!-- Badge tipe file -->
+                    <div id="fileTypeBadge" class="file-type-badge"></div>
+                    
+                    <!-- Kontrol video (akan ditampilkan hanya untuk video) -->
+                    <div id="videoControls" class="video-controls" style="display: none;">
+                        <button id="playPauseBtn">Putar</button>
+                        <button id="muteBtn">Suara</button>
+                    </div>
+                </div>
+                
+                <!-- Info Media -->
+                <div id="photoInfo" class="mt-4 text-center">
+                    <h3 id="photoTitle" class="text-xl font-semibold"></h3>
+                    <p id="photoDesc" class="text-gray-300 mt-2"></p>
+                </div>
+                
+                <!-- Tombol Navigasi -->
+                <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-md transition-all">
+                    ←
+                </button>
+                <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-md transition-all">
+                    →
+                </button>
+            </div>
+            
+            <!-- Thumbnail -->
+            <div id="thumbnailsContainer" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
+                <!-- Thumbnail akan di-generate oleh JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let proyekData = null;
+        let mediaItems = [];
+        let currentIndex = 0;
+        let currentVideo = null;
+
+        // Element references
+        const mainMedia = document.getElementById('mainMedia');
+        const fileTypeBadge = document.getElementById('fileTypeBadge');
+        const videoControls = document.getElementById('videoControls');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const muteBtn = document.getElementById('muteBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const thumbnailsContainer = document.getElementById('thumbnailsContainer');
+        const judulProyek = document.getElementById('judulProyek');
+        const tentangProyek = document.getElementById('tentangProyek');
+        const photoTitle = document.getElementById('photoTitle');
+        const photoDesc = document.getElementById('photoDesc');
+
+        // Fungsi untuk mengambil data dari JSON
+        async function loadProjectData() {
+            try {
+                const response = await fetch('./data.json');
+                if (!response.ok) {
+                    throw new Error('Gagal memuat data');
+                }
+                proyekData = await response.json();
+                initializeProject();
+            } catch (error) {
+                console.error('Error:', error);
+                judulProyek.textContent = 'Error Memuat Data';
+                tentangProyek.textContent = 'Terjadi kesalahan saat memuat data proyek.';
+            }
+        }
+
+        // Fungsi untuk inisialisasi proyek
+        function initializeProject() {
+            // Ambil ID proyek dari URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id') || 1; // Default ke proyek pertama
+            
+            // Cari proyek berdasarkan ID
+            const proyek = proyekData.proyek.find(p => p.id == projectId);
+            
+            if (!proyek) {
+                judulProyek.textContent = 'Proyek Tidak Ditemukan';
+                tentangProyek.textContent = 'Proyek dengan ID tersebut tidak ditemukan.';
+                return;
+            }
+
+            // Load data proyek
+            mediaItems = proyek.foto;
+            judulProyek.textContent = proyek.judul;
+            tentangProyek.textContent = proyek.tentang;
+
+            // Generate thumbnails
+            generateThumbnails();
+            
+            // Setup event listeners
+            setupEventListeners();
+            
+            // Load media pertama
+            updateMainMedia(0);
+        }
+
+        // Fungsi untuk generate thumbnails
+        function generateThumbnails() {
+            thumbnailsContainer.innerHTML = '';
+            
+            mediaItems.forEach((media, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = `thumbnail border-2 border-transparent rounded overflow-hidden cursor-pointer transition-all ${index === 0 ? 'active' : ''}`;
+                
+                // Tentukan apakah ini video atau gambar
+                const isVideo = media.type === 'video' || 
+                               media.url.toLowerCase().endsWith('.mp4') || 
+                               media.url.toLowerCase().endsWith('.mkv') ||
+                               media.url.toLowerCase().endsWith('.webm');
+                
+                if (isVideo) {
+                    // Thumbnail untuk video
+                    thumb.innerHTML = `
+                        <div class="relative">
+                            <video class="w-full h-20 object-cover" muted>
+                                <source src="${media.thumbnail || media.url}" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // Thumbnail untuk gambar
+                    thumb.innerHTML = `
+                        <img src="${media.thumbnail || media.url}" 
+                             alt="${media.judul}" 
+                             class="w-full h-20 object-cover" 
+                             data-index="${index}">
+                    `;
+                }
+                
+                thumb.setAttribute('data-index', index);
+                thumbnailsContainer.appendChild(thumb);
+            });
+        }
+
+        // Fungsi untuk setup event listeners
+        function setupEventListeners() {
+            // Event listener untuk tombol next
+            nextBtn.addEventListener('click', function() {
+                stopCurrentVideo();
+                currentIndex = (currentIndex + 1) % mediaItems.length;
+                updateMainMedia(currentIndex);
+            });
+            
+            // Event listener untuk tombol previous
+            prevBtn.addEventListener('click', function() {
+                stopCurrentVideo();
+                currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+                updateMainMedia(currentIndex);
+            });
+            
+            // Event listener untuk thumbnail
+            thumbnailsContainer.addEventListener('click', function(e) {
+                const thumb = e.target.closest('.thumbnail');
+                if (thumb) {
+                    stopCurrentVideo();
+                    const index = parseInt(thumb.getAttribute('data-index'));
+                    currentIndex = index;
+                    updateMainMedia(currentIndex);
+                }
+            });
+            
+            // Kontrol video
+            playPauseBtn.addEventListener('click', togglePlayPause);
+            muteBtn.addEventListener('click', toggleMute);
+            
+            // Navigasi dengan keyboard
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                } else if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                } else if (e.key === ' ' && currentVideo) {
+                    e.preventDefault();
+                    togglePlayPause();
+                }
+            });
+        }
+
+        // Fungsi untuk menghentikan video yang sedang diputar
+        function stopCurrentVideo() {
+            if (currentVideo) {
+                currentVideo.pause();
+                currentVideo.currentTime = 0;
+                currentVideo = null;
+            }
+        }
+
+        // Fungsi untuk memperbarui media utama
+        function updateMainMedia(index) {
+            mainMedia.classList.remove('fade-in');
+            void mainMedia.offsetWidth;
+            mainMedia.classList.add('fade-in');
+            
+            // Hapus konten sebelumnya
+            mainMedia.innerHTML = '';
+            videoControls.style.display = 'none';
+            fileTypeBadge.textContent = '';
+            
+            const media = mediaItems[index];
+            const isVideo = media.type === 'video' || 
+                           media.url.toLowerCase().endsWith('.mp4') || 
+                           media.url.toLowerCase().endsWith('.mkv') ||
+                           media.url.toLowerCase().endsWith('.webm');
+            
+            if (isVideo) {
+                // Buat elemen video
+                const video = document.createElement('video');
+                video.className = 'max-w-full max-h-full';
+                video.controls = true;
+                
+                const source = document.createElement('source');
+                source.src = media.url;
+                
+                // Tentukan tipe MIME berdasarkan ekstensi
+                if (media.url.toLowerCase().endsWith('.mp4')) {
+                    source.type = 'video/mp4';
+                } else if (media.url.toLowerCase().endsWith('.webm')) {
+                    source.type = 'video/webm';
+                } else if (media.url.toLowerCase().endsWith('.mkv')) {
+                    source.type = 'video/x-matroska';
+                }
+                
+                video.appendChild(source);
+                mainMedia.appendChild(video);
+                
+                // Simpan referensi video saat ini
+                currentVideo = video;
+                
+                // Tampilkan kontrol video kustom
+                videoControls.style.display = 'flex';
+                fileTypeBadge.textContent = 'VIDEO';
+                
+                // Update info
+                photoTitle.textContent = media.judul;
+                photoDesc.textContent = media.deskripsi;
+            } else {
+                // Buat elemen gambar
+                const img = document.createElement('img');
+                img.src = media.url;
+                img.alt = media.judul;
+                img.className = 'max-w-full max-h-full object-contain';
+                mainMedia.appendChild(img);
+                
+                fileTypeBadge.textContent = 'GAMBAR';
+                
+                // Update info
+                photoTitle.textContent = media.judul;
+                photoDesc.textContent = media.deskripsi;
+            }
+            
+            // Update thumbnail aktif
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach((thumb, i) => {
+                if (i === index) {
+                    thumb.classList.add('active');
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
+        }
+
+        // Fungsi untuk toggle play/pause video
+        function togglePlayPause() {
+            if (currentVideo) {
+                if (currentVideo.paused) {
+                    currentVideo.play();
+                    playPauseBtn.textContent = 'Jeda';
+                } else {
+                    currentVideo.pause();
+                    playPauseBtn.textContent = 'Putar';
+                }
+            }
+        }
+
+        // Fungsi untuk toggle mute/unmute video
+        function toggleMute() {
+            if (currentVideo) {
+                currentVideo.muted = !currentVideo.muted;
+                muteBtn.textContent = currentVideo.muted ? 'Suara' : 'Mute';
+            }
+        }
+
+        // Load data ketika halaman siap
+        document.addEventListener('DOMContentLoaded', loadProjectData);
+    </script>
+</body>
+</html>
