@@ -19,13 +19,13 @@ class ExperienceGallery {
                 ],
                 title: 'PT PLN (Persero)',
                 position: 'Electrical Engineering Intern',
-                period: 'June 2023 - August 2023',
-                description: 'Worked in the power distribution division, assisting in maintenance and optimization of electrical grid systems. Participated in field inspections and data analysis for improving grid efficiency.',
-                responsibilities: [
-                    'Assisted in maintenance of substation equipment',
-                    'Analyzed power quality data and prepared reports',
-                    'Participated in grid optimization projects',
-                    'Supported implementation of smart grid technologies'
+                period: 'December 2024 - February 2025',
+                description: 'Assumed substation operator responsibilities in the power distribution division, overseeing grid operations and maintenance activities. Collaborated with transmission line teams to support critical maintenance of protection relays and SCADA RTU systems.',
+                responsibilities : [
+                    'Performed Condition Based Maintenance on substation equipment',
+                    'Analyzed power quality data and prepared comprehensive reports', 
+                    'Participated in grid distribution optimization projects',
+                    'Supported implementation of smart grid technologies at substation'
                 ]
             },
             'tech-innov': {
@@ -43,79 +43,79 @@ class ExperienceGallery {
                 ],
                 title: 'Bangkit Academy',
                 position: 'Machine Learning Cohort',
-                period: 'January 2023 - March 2023',
-                description: 'Participated in Google-led Bangkit Academy program, focusing on cloud computing, machine learning, and mobile development.',
-                responsibilities: [
-                    'Completed cloud computing certification',
-                    'Developed machine learning models',
-                    'Built scalable cloud applications',
-                    'Collaborated in capstone project teams'
+                period: 'August 2024 - December 2024',
+                description: 'Completed the competitive, Google-led Bangkit Academy program, specializing in Machine Learning. Gained proficiency in fundamental concepts like Neural Networks, advanced architectures such as GANs, and implemented models using industry-standard tools like TensorFlow. Further honed skills by delivering a team-based capstone project and enhancing crucial soft skills including English proficiency and leadership..',
+                responsibilities : [
+                    'Mastered machine learning specialization including supervised learning and neural networks',
+                    'Implemented various ML models using TensorFlow for framework-based development and manual coding for fundamental understanding',
+                    'Collaborated in agile teams to design and deploy end-to-end capstone projects',
+                    'Strengthened professional soft skills and English communication through dedicated ILT sessions, alongside technical machine learning training'
                 ]
-            },
-            'smart-labs': {
-                images: [
-                    'img/smart-lab-1.jpg',
-                    'img/smart-lab-2.jpg',
-                    'img/smart-lab-3.jpg'
-                ],
-                altTexts: [
-                    'Smart Laboratory Automation System',
-                    'Data Monitoring Dashboard',
-                    'Research Equipment Setup'
-                ],
-                title: 'Smart Labs Research',
-                position: 'Research Assistant',
-                period: 'September 2022 - December 2022',
-                description: 'Worked on laboratory automation systems and data acquisition projects. Developed solutions for real-time monitoring and control of lab equipment.',
-                responsibilities: [
-                    'Automated laboratory measurement systems',
-                    'Developed data acquisition software',
-                    'Integrated sensors with cloud platforms',
-                    'Created real-time monitoring dashboards'
-                ]
-            },
-            'energy-sol': {
-                images: [
-                    'img/energy-1.jpg',
-                    'img/energy-2.jpg',
-                    'img/energy-3.jpg'
-                ],
-                altTexts: [
-                    'Renewable Energy System Design',
-                    'Solar Power Installation',
-                    'Energy Monitoring Setup'
-                ],
-                title: 'Energy Solutions Inc.',
-                position: 'Renewable Energy Intern',
-                period: 'March 2022 - June 2022',
-                description: 'Focused on renewable energy systems design and implementation. Worked on solar power installations and energy efficiency projects.',
-                responsibilities: [
-                    'Assisted in solar power system design',
-                    'Conducted energy efficiency audits',
-                    'Installed and tested renewable energy systems',
-                    'Analyzed energy consumption data'
-                ]
-            },
-            'automation': {
-                images: [
-                    'img/automation-1.jpg',
-                    'img/automation-2.jpg'
-                ],
-                altTexts: [
-                    'Industrial Automation Control Panel',
-                    'PLC Programming Interface'
-                ],
-                title: 'Automation Co.',
-                position: 'Automation Engineering Trainee',
-                period: 'July 2021 - September 2021',
-                description: 'Gained hands-on experience in industrial automation systems. Worked with PLC programming, motor control, and industrial networking.',
-                responsibilities: [
-                    'Programmed PLC systems for industrial control',
-                    'Designed motor control circuits',
-                    'Configured industrial communication networks',
-                    'Assisted in system installation and commissioning'
-                ]
-            }
+         }
+            // 'smart-labs': {
+            //     images: [
+            //         'img/smart-lab-1.jpg',
+            //         'img/smart-lab-2.jpg',
+            //         'img/smart-lab-3.jpg'
+            //     ],
+            //     altTexts: [
+            //         'Smart Laboratory Automation System',
+            //         'Data Monitoring Dashboard',
+            //         'Research Equipment Setup'
+            //     ],
+            //     title: 'Smart Labs Research',
+            //     position: 'Research Assistant',
+            //     period: 'September 2022 - December 2022',
+            //     description: 'Worked on laboratory automation systems and data acquisition projects. Developed solutions for real-time monitoring and control of lab equipment.',
+            //     responsibilities: [
+            //         'Automated laboratory measurement systems',
+            //         'Developed data acquisition software',
+            //         'Integrated sensors with cloud platforms',
+            //         'Created real-time monitoring dashboards'
+            //     ]
+            // },
+            // 'energy-sol': {
+            //     images: [
+            //         'img/energy-1.jpg',
+            //         'img/energy-2.jpg',
+            //         'img/energy-3.jpg'
+            //     ],
+            //     altTexts: [
+            //         'Renewable Energy System Design',
+            //         'Solar Power Installation',
+            //         'Energy Monitoring Setup'
+            //     ],
+            //     title: 'Energy Solutions Inc.',
+            //     position: 'Renewable Energy Intern',
+            //     period: 'March 2022 - June 2022',
+            //     description: 'Focused on renewable energy systems design and implementation. Worked on solar power installations and energy efficiency projects.',
+            //     responsibilities: [
+            //         'Assisted in solar power system design',
+            //         'Conducted energy efficiency audits',
+            //         'Installed and tested renewable energy systems',
+            //         'Analyzed energy consumption data'
+            //     ]
+            // },
+            // 'automation': {
+            //     images: [
+            //         'img/automation-1.jpg',
+            //         'img/automation-2.jpg'
+            //     ],
+            //     altTexts: [
+            //         'Industrial Automation Control Panel',
+            //         'PLC Programming Interface'
+            //     ],
+            //     title: 'Automation Co.',
+            //     position: 'Automation Engineering Trainee',
+            //     period: 'July 2021 - September 2021',
+            //     description: 'Gained hands-on experience in industrial automation systems. Worked with PLC programming, motor control, and industrial networking.',
+            //     responsibilities: [
+            //         'Programmed PLC systems for industrial control',
+            //         'Designed motor control circuits',
+            //         'Configured industrial communication networks',
+            //         'Assisted in system installation and commissioning'
+            //     ]
+            // }
         };
         
         this.boundPrev = this.previousImage.bind(this);

@@ -1,193 +1,223 @@
 {
-    "proyek": [
-      {
-        "id": 1,
-        "judul": "Sistem Deteksi Emisi Kendaraan  dengan sistem IoT",
-        "tentang": "Vehicle Emission Monitoring System adalah solusi IoT yang saya kembangkan untuk mendeteksi dan melacak emisi karbon kendaraan secara real-time menggunakan Arduino R4 WiFi. Sistem ini mengintegrasikan multiple sensor termasuk MQ-2 untuk hydrocarbon, MICS6814 untuk gas CO, NO2, dan NH3, DHT22 untuk parameter lingkungan, serta modul GPS untuk pelacakan posisi. Data sensor yang terkumpul secara prioritas disimpan terlebih dahulu ke microSD card dalam format CSV, memastikan tidak ada data yang hilang meskipun terjadi gangguan koneksi. \n\n Arsitektur two-layer storage yang saya implementasikan memisahkan proses akuisisi data dan transmisi cloud, dimana data yang tersimpan di microSD kemudian dikirimkan ke server website melalui komunikasi HTTP ketika koneksi WiFi tersedia. Pendekatan ini mengoptimalkan reliabilitas sistem di lingkungan mobile kendaraan yang sering mengalami fluktuasi sinyal, sekaligus memungkinkan analisis historis emisi karbon untuk pemantauan dampak lingkungan dan kebijakan berkelanjutan.",
-        "foto": [
-          {
-            "judul": "In-Field Implementation",
-            "deskripsi": "Implementasi Rancangan alat di kendaraan mobil",
-            "url": "img/hardware1.jpg",
-            "thumbnail": "img/hardware1.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "In-Field Implementation 2",
-            "deskripsi": "Implementasi Rancangan alat di kendaraan motor",
-            "url": "img/hardware3.jpg",
-            "thumbnail": "img/hardware3.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "Core Logic in Action",
-            "deskripsi": "Kode program utama yang berjalan di mikrokontroller",
-            "url": "img/hardware2.jpg",
-            "thumbnail": "img/hardware2.jpg",
-            "type":"image"
-          },
-          
-          {
-            "judul": "End-to-End IoT Architecture: HTTP Protocol in Action for Emission Monitoring",
-            "deskripsi": "Bukti bahwa aliran data dari kendaraan (Arduino → microSD → HTTP Request) sampai ke Web berjalan sukses.",
-            "url": "img/hardware6.jpg",
-            "thumbnail": "img/hardware6.jpg",
-            "type":"image"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "judul": "IoT and Web Platform for Vehicle Carbon Footprint Analysis & Carbon Credit Management",
-        "tentang": "Platform ini merupakan sistem terintegrasi yang menghubungkan perangkat IoT pemantau emisi kendaraan dengan aplikasi web analisis kredit karbon, dibangun menggunakan Node.js dan Express.js sebagai fondasi backend. Sistem mengadopsi arsitektur database hybrid dengan MongoDB untuk menyimpan data sensor dan profil pengguna yang bersifat dinamis, serta MySQL untuk menangani transaksi keuangan dan data relasional. Pada sisi backend, platform dilengkapi dengan berbagai middleware keamanan seperti Helmet.js untuk pengamanan header, express-rate-limit untuk mencegah brute force attack, dan xss-clean untuk proteksi terhadap serangan XSS.\nUntuk sistem autentikasi, platform mengimplementasikan Passport.js dengan strategi Google OAuth 2.0 dan JWT (JSON Web Token) untuk manajemen session yang aman. Fitur kunci termasuk dashboard real-time menggunakan Chart.js untuk visualisasi data emisi, integrasi Midtrans untuk proses pembayaran kredit karbon, serta Node-cron untuk menangani task scheduler seperti kalkulasi karbon harian. Sistem ini juga mendukung notifikasi email via Nodemailer dan caching  untuk optimasi performa pada data yang frequently accessed.",
-        "foto": [
-          {
-            "judul": "Sistem Autentikasi menggunakan OAuth 2.0",
-            "deskripsi": "Implementasi sistem login yang aman menggunakan Google OAuth 2.0 dengan Passport.js, dilengkapi enkripsi password bcrypt, session management JWT, dan proteksi keamanan terhadap serangan CSRF serta XSS.",
-            "url": "img/web1.jpg",
-            "thumbnail": "img/web1.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "Manajemen Data Kendaraan",
-            "deskripsi": "Antarmuka untuk mengelola data master kendaraan, yang tersimpan dalam database MySQL dan siap diproses untuk analisis emisi serta perhitungan kredit karbon",
-            "url": "img/web2.jpg",
-            "thumbnail": "img/web2.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "E-Commerce Kredit Karbon",
-            "deskripsi": "Interface pembelian kredit karbon terintegrasi dengan payment gateway Midtrans, menampilkan berbagai paket offset emisi dengan checkout system yang aman.",
-            "url": "img/web3.jpg",
-            "thumbnail": "img/web3.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "Dashboard Overview Sistem",
-            "deskripsi": "Dashboard utama yang menampilkan ringkasan lengkap sistem meliputi total kendaraan terdaftar, riwayat transaksi kredit karbon, dan statistik penggunaan platform secara real-time",
-            "url": "img/web7.jpg",
-            "thumbnail": "img/web7.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "Interface Pembayaran Midtrans",
-            "deskripsi": "Halaman checkout terintegrasi payment gateway Midtrans dengan berbagai metode pembayaran (bank transfer, e-wallet, QRIS) untuk pembelian kredit karbon yang aman dan terpercaya.",
-            "url": "img/web8.jpg",
-            "thumbnail": "img/web8.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "Interface Pembayaran Midtrans",
-            "deskripsi": "Halaman checkout terintegrasi payment gateway Midtrans dengan berbagai metode pembayaran (bank transfer, e-wallet, QRIS) untuk pembelian kredit karbon yang aman dan terpercaya.",
-            "url": "img/web8.jpg",
-            "thumbnail": "img/web8.jpg",
-            "type":"image"
-          },
-
-          {
-            "judul": "Diagram Skema Database",
-            "deskripsi": "Struktur relasional database sistem yang menunjukkan hubungan antar tabel utama dengan foreign key relationship untuk mendukung integrasi data IoT dan transaksi kredit karbon.",
-            "url": "img/web9.jpg",
-            "thumbnail": "img/web9.jpg",
-            "type":"image"
-          }
-        ,
+  "proyek": [
+    {
+      "id": 1,
+      "judul": "Sistem Deteksi Emisi Kendaraan  dengan sistem IoT",
+      "tentang": "Vehicle Emission Monitoring System adalah solusi IoT yang saya kembangkan untuk mendeteksi dan melacak emisi karbon kendaraan secara real-time menggunakan Arduino R4 WiFi. Sistem ini mengintegrasikan multiple sensor termasuk MQ-2 untuk hydrocarbon, MICS6814 untuk gas CO, NO2, dan NH3, DHT22 untuk parameter lingkungan, serta modul GPS untuk pelacakan posisi. Data sensor yang terkumpul secara prioritas disimpan terlebih dahulu ke microSD card dalam format CSV, memastikan tidak ada data yang hilang meskipun terjadi gangguan koneksi. \n\n Arsitektur two-layer storage yang saya implementasikan memisahkan proses akuisisi data dan transmisi cloud, dimana data yang tersimpan di microSD kemudian dikirimkan ke server website melalui komunikasi HTTP ketika koneksi WiFi tersedia. Pendekatan ini mengoptimalkan reliabilitas sistem di lingkungan mobile kendaraan yang sering mengalami fluktuasi sinyal, sekaligus memungkinkan analisis historis emisi karbon untuk pemantauan dampak lingkungan dan kebijakan berkelanjutan.",
+      "foto": [
         {
-          "judul": "Analisis Emisi & Jual Kredit Karbon Per Kendaraanl",
-          "deskripsi": "Detail kendaraan yang menampilkan analisis historis emisi dengan grafik interaktif, dilengkapi fitur penjualan kredit karbon ",
-          "url": "img/web13.jpg",
-          "thumbnail": "img/web11.jpg",
-            "type":"image"
+          "judul": "In-Field Implementation",
+          "deskripsi": "Implementasi Rancangan alat di kendaraan mobil",
+          "url": "img/hardware1.jpg",
+          "thumbnail": "img/hardware1.jpg",
+          "type":"image"
         },
         {
-          "judul": "Visualisasi Data Sensor Real-time",
-          "deskripsi": "Dashboard monitoring yang menampilkan data emisi kendaraan dari perangkat IoT secara real-time",
-          "url": "img/web13.jpg",
-          "thumbnail": "img/web13.jpg",
-            "type":"image"
-        }
-        ,
-        {
-          "judul": "Dokumentasi Screenshot proses development website",
-          "deskripsi": "Dashboard monitoring yang menampilkan data emisi kendaraan dari perangkat IoT secara real-time",
-          "url": "img/web14.jpg",
-          "thumbnail": "img/web14.jpg",
-            "type":"image"
+          "judul": "In-Field Implementation 2",
+          "deskripsi": "Implementasi Rancangan alat di kendaraan motor",
+          "url": "img/hardware3.jpg",
+          "thumbnail": "img/hardware3.jpg",
+          "type":"image"
         },
         {
-          "judul": "Foto Session Programming",
-          "deskripsi": "",
-          "url": "img/web15.jpg",
-          "thumbnail": "img/web15.jpg",
-            "type":"image"
+          "judul": "Core Logic in Action",
+          "deskripsi": "Kode program utama yang berjalan di mikrokontroller",
+          "url": "img/hardware2.jpg",
+          "thumbnail": "img/hardware2.jpg",
+          "type":"image"
+        },
+        
+        {
+          "judul": "End-to-End IoT Architecture: HTTP Protocol in Action for Emission Monitoring",
+          "deskripsi": "Bukti bahwa aliran data dari kendaraan (Arduino → microSD → HTTP Request) sampai ke Web berjalan sukses.",
+          "url": "img/hardware6.jpg",
+          "thumbnail": "img/hardware6.jpg",
+          "type":"image"
         }
+      ]
+    },
+    {
+      "id": 2,
+      "judul": "IoT and Web Platform for Vehicle Carbon Footprint Analysis & Carbon Credit Management",
+      "tentang": "Platform ini merupakan sistem terintegrasi yang menghubungkan perangkat IoT pemantau emisi kendaraan dengan aplikasi web analisis kredit karbon, dibangun menggunakan Node.js dan Express.js sebagai fondasi backend. Sistem mengadopsi arsitektur database hybrid dengan MongoDB untuk menyimpan data sensor dan profil pengguna yang bersifat dinamis, serta MySQL untuk menangani transaksi keuangan dan data relasional. Pada sisi backend, platform dilengkapi dengan berbagai middleware keamanan seperti Helmet.js untuk pengamanan header, express-rate-limit untuk mencegah brute force attack, dan xss-clean untuk proteksi terhadap serangan XSS.\nUntuk sistem autentikasi, platform mengimplementasikan Passport.js dengan strategi Google OAuth 2.0 dan JWT (JSON Web Token) untuk manajemen session yang aman. Fitur kunci termasuk dashboard real-time menggunakan Chart.js untuk visualisasi data emisi, integrasi Midtrans untuk proses pembayaran kredit karbon, serta Node-cron untuk menangani task scheduler seperti kalkulasi karbon harian. Sistem ini juga mendukung notifikasi email via Nodemailer dan caching  untuk optimasi performa pada data yang frequently accessed.",
+      "foto": [
+        {
+          "judul": "Sistem Autentikasi menggunakan OAuth 2.0",
+          "deskripsi": "Implementasi sistem login yang aman menggunakan Google OAuth 2.0 dengan Passport.js, dilengkapi enkripsi password bcrypt, session management JWT, dan proteksi keamanan terhadap serangan CSRF serta XSS.",
+          "url": "img/web1.jpg",
+          "thumbnail": "img/web1.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "Manajemen Data Kendaraan",
+          "deskripsi": "Antarmuka untuk mengelola data master kendaraan, yang tersimpan dalam database MySQL dan siap diproses untuk analisis emisi serta perhitungan kredit karbon",
+          "url": "img/web2.jpg",
+          "thumbnail": "img/web2.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "E-Commerce Kredit Karbon",
+          "deskripsi": "Interface pembelian kredit karbon terintegrasi dengan payment gateway Midtrans, menampilkan berbagai paket offset emisi dengan checkout system yang aman.",
+          "url": "img/web3.jpg",
+          "thumbnail": "img/web3.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "Dashboard Overview Sistem",
+          "deskripsi": "Dashboard utama yang menampilkan ringkasan lengkap sistem meliputi total kendaraan terdaftar, riwayat transaksi kredit karbon, dan statistik penggunaan platform secara real-time",
+          "url": "img/web7.jpg",
+          "thumbnail": "img/web7.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "Interface Pembayaran Midtrans",
+          "deskripsi": "Halaman checkout terintegrasi payment gateway Midtrans dengan berbagai metode pembayaran (bank transfer, e-wallet, QRIS) untuk pembelian kredit karbon yang aman dan terpercaya.",
+          "url": "img/web8.jpg",
+          "thumbnail": "img/web8.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "Interface Pembayaran Midtrans",
+          "deskripsi": "Halaman checkout terintegrasi payment gateway Midtrans dengan berbagai metode pembayaran (bank transfer, e-wallet, QRIS) untuk pembelian kredit karbon yang aman dan terpercaya.",
+          "url": "img/web8.jpg",
+          "thumbnail": "img/web8.jpg",
+          "type":"image"
+        },
 
-        ]
+        {
+          "judul": "Diagram Skema Database",
+          "deskripsi": "Struktur relasional database sistem yang menunjukkan hubungan antar tabel utama dengan foreign key relationship untuk mendukung integrasi data IoT dan transaksi kredit karbon.",
+          "url": "img/web9.jpg",
+          "thumbnail": "img/web9.jpg",
+          "type":"image"
+        }
+      ,
+      {
+        "judul": "Analisis Emisi & Jual Kredit Karbon Per Kendaraanl",
+        "deskripsi": "Detail kendaraan yang menampilkan analisis historis emisi dengan grafik interaktif, dilengkapi fitur penjualan kredit karbon ",
+        "url": "img/web13.jpg",
+        "thumbnail": "img/web11.jpg",
+          "type":"image"
       },
       {
-        "id": 3,
-        "judul": "Design of Indonesian Sign Language Translation System (SIBI) with MediaPipe using Combination Method of Multilayer Perceptron and Long Short Term Memory",
-        "tentang": "Sistem Bahasa Isyarat Indonesia (SIBI) merupakan metode komunikasi visual yang vital, namun implementasi teknologi deteksinya seringkali terhambat oleh perbedaan karakteristik gestur statistik (single-pose) dan dinamis (multi-pose). Penelitian ini mengusulkan dan mengimplementasikan sistem terintegrasi untuk mendeteksi dan menerjemahkan kedua jenis gestur SIBI tersebut secara simultan. Metode yang digunakan adalah gabungan model pembelajaran mendalam, yaitu Multilayer Perceptron (MLP) dan Long Short-Term Memory (LSTM). MLP dirancang untuk mengklasifikasikan gestur statis, yaitu gestur single-pose, dan gestur awal gerakan SIBI dinamis dengan memproses ekstraksi data MediaPipe dari satu frame. Ketika gestur dinamis awal tersebut divalidasi oleh MLP, sistem akan menyelesaikan ekstraksi data dari 20 atau lebih frame yang berurutan sebelum data tersebut diproses oleh LSTM untuk menerjemahkan gestur dinamis tersebut. Hasil pengujian menunjukkan bahwa model MLP mencapai akurasi 0,982, sementara model LSTM mencapai akurasi 1,0, yang menegaskan kemampuan sistem dalam menyediakan solusi penerjemahan SIBI yang komprehensif dan sangat akurat. Keluaran yang dihasilkan sistem ini berupa teks berkelanjutan dari serangkaian gestur yang terdeteksi.",
-        "foto": [
-          {
-            "judul": "Hasil Implementasi Realtime ",
-            "deskripsi": "Hasil implementasi realtime menggunakan openCV untuk proses kamera realtime dan dijalankan di website dengan framework fastAPI dan juga menggunakan protokol komunikasi webSocket untuk menjalankan kamera realtime",
-            "url": "img/sibi.mp4",
-            "thumbnail": "img/sibi.mp4",
-            "type":"video"
-          },
-          {
-            "judul": "Proses Pembuatan Model LSTM ",
-            "deskripsi": "Hasil Training dan Testing model LSTM untuk 9 jenis bahasa isyarat dengan 28080 baris dataset",
-            "url": "img/sibi1.jpg",
-            "thumbnail": "img/sibi1.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "Proses Pembuatan Model MLP ",
-            "deskripsi": "Hasil Training dan Testing model MLP untuk 40 jenis bahasa isyarat dengan 9600 baris dataset",
-            "url": "img/sibi2.jpg",
-            "thumbnail": "img/sibi2.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "Analisis Data  ",
-            "deskripsi": "Proses Analisis Data untuk mendapatkan metode preprocessing terbaik",
-            "url": "img/sibi4.jpg",
-            "thumbnail": "img/sibi4.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "Preprocessing Data  ",
-            "deskripsi": "Preprocessing data seperti Translasi, SKalalisasi, Truncate sequence data, Perubahan koordinat landmark tangan dari absolut terhadap kamera menjadi relatif terhadap titik tengah muka",
-            "url": "img/sibi8.jpg",
-            "thumbnail": "img/sibi8.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "Activity Diagram ",
-            "deskripsi": "Diagram aktivitas dari sistem penerjemah secara realtime",
-            "url": "img/sibi5.jpg",
-            "thumbnail": "img/sibi5.jpg",
-            "type":"image"
-          },
-          {
-            "judul": "Usecase Diagram ",
-            "deskripsi": "Diagram penggunaan dari sistem penerjemah secara realtime",
-            "url": "img/sibi6.jpg",
-            "thumbnail": "img/sibi6.jpg",
-            "type":"image"
-
-          },
-          {
-            "judul": "User Interface Website penerjemah SIBI realtime ",
-            "deskripsi": "",
-            "url": "img/sibi7.jpg",
-            "thumbnail": "img/sibi7.jpg",
-            "type":"image"
-            
-          }
-        ]
+        "judul": "Visualisasi Data Sensor Real-time",
+        "deskripsi": "Dashboard monitoring yang menampilkan data emisi kendaraan dari perangkat IoT secara real-time",
+        "url": "img/web13.jpg",
+        "thumbnail": "img/web13.jpg",
+          "type":"image"
       }
-    ]
-  }
+      ,
+      {
+        "judul": "Dokumentasi Screenshot proses development website",
+        "deskripsi": "Dashboard monitoring yang menampilkan data emisi kendaraan dari perangkat IoT secara real-time",
+        "url": "img/web14.jpg",
+        "thumbnail": "img/web14.jpg",
+          "type":"image"
+      },
+      {
+        "judul": "Foto Session Programming",
+        "deskripsi": "",
+        "url": "img/web15.jpg",
+        "thumbnail": "img/web15.jpg",
+          "type":"image"
+      }
+
+      ]
+    },
+    {
+      "id": 3,
+      "judul": "Design of Indonesian Sign Language Translation System (SIBI) with MediaPipe using Combination Method of Multilayer Perceptron and Long Short Term Memory",
+      "tentang": "Sistem Bahasa Isyarat Indonesia (SIBI) merupakan metode komunikasi visual yang vital, namun implementasi teknologi deteksinya seringkali terhambat oleh perbedaan karakteristik gestur statistik (single-pose) dan dinamis (multi-pose). Penelitian ini mengusulkan dan mengimplementasikan sistem terintegrasi untuk mendeteksi dan menerjemahkan kedua jenis gestur SIBI tersebut secara simultan. Metode yang digunakan adalah gabungan model pembelajaran mendalam, yaitu Multilayer Perceptron (MLP) dan Long Short-Term Memory (LSTM). MLP dirancang untuk mengklasifikasikan gestur statis, yaitu gestur single-pose, dan gestur awal gerakan SIBI dinamis dengan memproses ekstraksi data MediaPipe dari satu frame. Ketika gestur dinamis awal tersebut divalidasi oleh MLP, sistem akan menyelesaikan ekstraksi data dari 20 atau lebih frame yang berurutan sebelum data tersebut diproses oleh LSTM untuk menerjemahkan gestur dinamis tersebut. Hasil pengujian menunjukkan bahwa model MLP mencapai akurasi 0,982, sementara model LSTM mencapai akurasi 1,0, yang menegaskan kemampuan sistem dalam menyediakan solusi penerjemahan SIBI yang komprehensif dan sangat akurat. Keluaran yang dihasilkan sistem ini berupa teks berkelanjutan dari serangkaian gestur yang terdeteksi.",
+      "foto": [
+        {
+          "judul": "Hasil Implementasi Realtime ",
+          "deskripsi": "Hasil implementasi realtime menggunakan openCV untuk proses kamera realtime dan dijalankan di website dengan framework fastAPI dan juga menggunakan protokol komunikasi webSocket untuk menjalankan kamera realtime",
+          "url": "img/sibi.mp4",
+          "thumbnail": "img/sibi.mp4",
+          "type":"video"
+        },
+        {
+          "judul": "Proses Pembuatan Model LSTM ",
+          "deskripsi": "Hasil Training dan Testing model LSTM untuk 9 jenis bahasa isyarat dengan 28080 baris dataset",
+          "url": "img/sibi1.jpg",
+          "thumbnail": "img/sibi1.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "Proses Pembuatan Model MLP ",
+          "deskripsi": "Hasil Training dan Testing model MLP untuk 40 jenis bahasa isyarat dengan 9600 baris dataset",
+          "url": "img/sibi2.jpg",
+          "thumbnail": "img/sibi2.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "Analisis Data  ",
+          "deskripsi": "Proses Analisis Data untuk mendapatkan metode preprocessing terbaik",
+          "url": "img/sibi4.jpg",
+          "thumbnail": "img/sibi4.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "Preprocessing Data  ",
+          "deskripsi": "Preprocessing data seperti Translasi, SKalalisasi, Truncate sequence data, Perubahan koordinat landmark tangan dari absolut terhadap kamera menjadi relatif terhadap titik tengah muka",
+          "url": "img/sibi8.jpg",
+          "thumbnail": "img/sibi8.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "Activity Diagram ",
+          "deskripsi": "Diagram aktivitas dari sistem penerjemah secara realtime",
+          "url": "img/sibi5.jpg",
+          "thumbnail": "img/sibi5.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "Usecase Diagram ",
+          "deskripsi": "Diagram penggunaan dari sistem penerjemah secara realtime",
+          "url": "img/sibi6.jpg",
+          "thumbnail": "img/sibi6.jpg",
+          "type":"image"
+
+        },
+        {
+          "judul": "User Interface Website penerjemah SIBI realtime ",
+          "deskripsi": "",
+          "url": "img/sibi7.jpg",
+          "thumbnail": "img/sibi7.jpg",
+          "type":"image"
+          
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "judul": "Design a wheeled soccer robot",
+      "tentang": "Perancangan robot sepak bola beroda mencakup desain mekanikal dengan chassis aluminum dan 4 omni wheels untuk mobilitas omnidirectional, dilengkapi solenoid kicker dan roller dribbler. Sistem elektrikal menggunakan battery LiPo 14.8V dengan distribusi daya teratur melalui multiple voltage regulator, dikendalikan oleh STM32F4 sebagai main controller yang terintegrasi dengan motor driver, sensor IMU, dan infrared obstacle detection. \nPada aspek pemrograman, implementasi computer vision dengan OpenCV melakukan deteksi bola menggunakan HSV color thresholding, dilengkapi obstacle avoidance untuk menghindari tabrakan dan teammate identification untuk koordinasi tim. Sistem komunikasi mengintegrasikan WebSocket untuk koneksi real-time dengan laptop pengendali dan Broadcast Station dengan UDP multicast untuk koordinasi antar robot, memungkinkan pertukaran data posisi dan strategi dengan latency di bawah 50ms..",
+      "foto": [
+        {
+          "judul": "Foto Tim Sepak bola Beroda ",
+          "deskripsi": "",
+          "url": "img/krsbi1.jpg",
+          "thumbnail": "img/krsbi1.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "Demonstrasi dari Robot ",
+          "deskripsi": "",
+          "url": "img/krsbi2.jpg",
+          "thumbnail": "img/krsbi2.jpg",
+          "type":"image"
+        },
+        {
+          "judul": "Proses Perlomban KRSBI ",
+          "deskripsi": "",
+          "url": "img/krsbi3.jpg",
+          "thumbnail": "img/krsbi3.jpg",
+          "type":"image"
+        }
+  ]
+}
+
+
+  ]
+}

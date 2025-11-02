@@ -1,0 +1,207 @@
+{
+    "proyek": [
+      {
+        "id": 1,
+        "judul": "Vehicle Emission Detection System with IoT Technology",
+        "tentang": "The Vehicle Emission Monitoring System is an IoT solution I developed to detect and track vehicle carbon emissions in real-time using Arduino R4 WiFi. This system integrates multiple sensors including MQ-2 for hydrocarbons, MICS6814 for CO, NO2, and NH3 gases, DHT22 for environmental parameters, and a GPS module for position tracking. The collected sensor data is prioritized and first stored on a microSD card in CSV format, ensuring no data loss even if connection disruptions occur.\n\nThe two-layer storage architecture I implemented separates data acquisition and cloud transmission processes, where data stored on the microSD is then sent to the website server via HTTP communication when WiFi connection is available. This approach optimizes system reliability in mobile vehicle environments that often experience signal fluctuations, while also enabling historical carbon emission analysis for environmental impact monitoring and sustainability policies.",
+        "foto": [
+          {
+            "judul": "In-Field Implementation",
+            "deskripsi": "Device design implementation in a car vehicle",
+            "url": "img/hardware1.jpg",
+            "thumbnail": "img/hardware1.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "In-Field Implementation 2",
+            "deskripsi": "Device design implementation in a motorcycle vehicle",
+            "url": "img/hardware3.jpg",
+            "thumbnail": "img/hardware3.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Core Logic in Action",
+            "deskripsi": "Main program code running on the microcontroller",
+            "url": "img/hardware2.jpg",
+            "thumbnail": "img/hardware2.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "End-to-End IoT Architecture: HTTP Protocol in Action for Emission Monitoring",
+            "deskripsi": "Proof that data flow from vehicle (Arduino → microSD → HTTP Request) to Web runs successfully",
+            "url": "img/hardware6.jpg",
+            "thumbnail": "img/hardware6.jpg",
+            "type": "image"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "judul": "IoT and Web Platform for Vehicle Carbon Footprint Analysis & Carbon Credit Management",
+        "tentang": "This platform is an integrated system connecting vehicle emission monitoring IoT devices with carbon credit analysis web applications, built using Node.js and Express.js as the backend foundation. The system adopts a hybrid database architecture with MongoDB for storing dynamic sensor data and user profiles, and MySQL for handling financial transactions and relational data. On the backend side, the platform is equipped with various security middleware such as Helmet.js for header security, express-rate-limit to prevent brute force attacks, and xss-clean for XSS attack protection.\n\nFor the authentication system, the platform implements Passport.js with Google OAuth 2.0 strategy and JWT (JSON Web Token) for secure session management. Key features include real-time dashboard using Chart.js for emission data visualization, Midtrans integration for carbon credit payment processing, and Node-cron for handling task schedulers like daily carbon calculations. The system also supports email notifications via Nodemailer and Redis caching for performance optimization on frequently accessed data.",
+        "foto": [
+          {
+            "judul": "Authentication System using OAuth 2.0",
+            "deskripsi": "Implementation of secure login system using Google OAuth 2.0 with Passport.js, equipped with bcrypt password encryption, JWT session management, and security protection against CSRF and XSS attacks",
+            "url": "img/web1.jpg",
+            "thumbnail": "img/web1.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Vehicle Data Management",
+            "deskripsi": "Interface for managing master vehicle data, stored in MySQL database and ready for emission analysis and carbon credit calculations",
+            "url": "img/web2.jpg",
+            "thumbnail": "img/web2.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Carbon Credit E-Commerce",
+            "deskripsi": "Carbon credit purchase interface integrated with Midtrans payment gateway, displaying various emission offset packages with secure checkout system",
+            "url": "img/web3.jpg",
+            "thumbnail": "img/web3.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "System Overview Dashboard",
+            "deskripsi": "Main dashboard displaying complete system summary including total registered vehicles, carbon credit transaction history, and real-time platform usage statistics",
+            "url": "img/web7.jpg",
+            "thumbnail": "img/web7.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Midtrans Payment Interface",
+            "deskripsi": "Checkout page integrated with Midtrans payment gateway with various payment methods (bank transfer, e-wallet, QRIS) for secure and trusted carbon credit purchases",
+            "url": "img/web8.jpg",
+            "thumbnail": "img/web8.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Database Schema Diagram",
+            "deskripsi": "Relational database structure of the system showing relationships between main tables with foreign key relationships to support IoT data integration and carbon credit transactions",
+            "url": "img/web9.jpg",
+            "thumbnail": "img/web9.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Emission Analysis & Carbon Credit Sales Per Vehicle",
+            "deskripsi": "Vehicle details displaying historical emission analysis with interactive charts, equipped with carbon credit sales feature",
+            "url": "img/web13.jpg",
+            "thumbnail": "img/web11.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Real-time Sensor Data Visualization",
+            "deskripsi": "Monitoring dashboard displaying real-time vehicle emission data from IoT devices",
+            "url": "img/web13.jpg",
+            "thumbnail": "img/web13.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Website Development Process Documentation Screenshot",
+            "deskripsi": "Monitoring dashboard displaying real-time vehicle emission data from IoT devices",
+            "url": "img/web14.jpg",
+            "thumbnail": "img/web14.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Programming Session Photo",
+            "deskripsi": "",
+            "url": "img/web15.jpg",
+            "thumbnail": "img/web15.jpg",
+            "type": "image"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "judul": "Design of Indonesian Sign Language Translation System (SIBI) with MediaPipe using Combination Method of Multilayer Perceptron and Long Short Term Memory",
+        "tentang": "The Indonesian Sign Language System (SIBI) is a vital visual communication method, but the implementation of its detection technology is often hindered by differences in static (single-pose) and dynamic (multi-pose) gesture characteristics. This research proposes and implements an integrated system to detect and translate both types of SIBI gestures simultaneously. The method used is a combination of deep learning models, namely Multilayer Perceptron (MLP) and Long Short-Term Memory (LSTM). MLP is designed to classify static gestures, which are single-pose gestures, and the initial movements of dynamic SIBI gestures by processing MediaPipe data extraction from a single frame. When the initial dynamic gesture is validated by MLP, the system completes data extraction from 20 or more consecutive frames before the data is processed by LSTM to translate the dynamic gesture. Test results show that the MLP model achieves an accuracy of 0.982, while the LSTM model achieves an accuracy of 1.0, confirming the system's ability to provide comprehensive and highly accurate SIBI translation solutions. The output produced by this system is continuous text from a series of detected gestures.",
+        "foto": [
+          {
+            "judul": "Realtime Implementation Results",
+            "deskripsi": "Realtime implementation results using OpenCV for real-time camera processing and running on website with FastAPI framework and also using WebSocket communication protocol for running real-time camera",
+            "url": "img/sibi.mp4",
+            "thumbnail": "img/sibi.mp4",
+            "type": "video"
+          },
+          {
+            "judul": "LSTM Model Creation Process",
+            "deskripsi": "Training and Testing results of LSTM model for 9 types of sign language with 28,080 rows of dataset",
+            "url": "img/sibi1.jpg",
+            "thumbnail": "img/sibi1.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "MLP Model Creation Process",
+            "deskripsi": "Training and Testing results of MLP model for 40 types of sign language with 9,600 rows of dataset",
+            "url": "img/sibi2.jpg",
+            "thumbnail": "img/sibi2.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Data Analysis",
+            "deskripsi": "Data analysis process to obtain the best preprocessing method",
+            "url": "img/sibi4.jpg",
+            "thumbnail": "img/sibi4.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Data Preprocessing",
+            "deskripsi": "Data preprocessing such as Translation, Scaling, Truncate sequence data, Changing hand landmark coordinates from absolute to camera relative to facial center point",
+            "url": "img/sibi8.jpg",
+            "thumbnail": "img/sibi8.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Activity Diagram",
+            "deskripsi": "Activity diagram of the real-time translation system",
+            "url": "img/sibi5.jpg",
+            "thumbnail": "img/sibi5.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Use Case Diagram",
+            "deskripsi": "Use case diagram of the real-time translation system",
+            "url": "img/sibi6.jpg",
+            "thumbnail": "img/sibi6.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "SIBI Realtime Translator Website User Interface",
+            "deskripsi": "",
+            "url": "img/sibi7.jpg",
+            "thumbnail": "img/sibi7.jpg",
+            "type": "image"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "judul": "Design a Wheeled Soccer Robot",
+        "tentang": "The design of a wheeled soccer robot includes a mechanical design with an aluminum chassis and 4 omni wheels for omnidirectional mobility, equipped with a solenoid kicker and roller dribbler. The electrical system uses a 14.8V LiPo battery with regulated power distribution through multiple voltage regulators, controlled by STM32F4 as the main controller integrated with a motor driver, IMU sensor, and infrared obstacle detection. In the programming aspect, the implementation of computer vision with OpenCV detects the ball using HSV color thresholding, equipped with obstacle avoidance to avoid collisions and teammate identification for team coordination. The communication system integrates WebSocket for real-time connection with the controller laptop and Broadcast Station with UDP multicast for coordination between robots, enabling the exchange of position and strategy data with latency below 50ms.",
+        "foto": [
+          {
+            "judul": "Wheeled Soccer Robot Team Photo",
+            "deskripsi": "",
+            "url": "img/krsbi1.jpg",
+            "thumbnail": "img/krsbi1.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "Robot Demonstration",
+            "deskripsi": "",
+            "url": "img/krsbi2.jpg",
+            "thumbnail": "img/krsbi2.jpg",
+            "type": "image"
+          },
+          {
+            "judul": "KRSBI Competition Process",
+            "deskripsi": "",
+            "url": "img/krsbi3.jpg",
+            "thumbnail": "img/krsbi3.jpg",
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  }

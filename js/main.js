@@ -540,7 +540,14 @@ class CVDownloadSystem {
         }
     }
 }
-
+document.getElementById('explore-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
+});
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
     new CVDownloadSystem();

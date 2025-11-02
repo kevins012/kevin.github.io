@@ -44,16 +44,23 @@ class ProjectsRotation {
             },
             {
                 id: 'industrial-monitor',
-                title: 'Industrial Monitor',
-                description: 'Real-time factory equipment monitoring system with PLC integration and dashboard visualization.',
+                title: 'Design a wheeled soccer robot',
+                description: 'The wheeled soccer robot is designed with an omnidirectional mechanical system, integrated STM32F4 electrical, vision-based detection programming for the ball and obstacles, and hybrid WebSocket and Broadcast Station communications that enable real-time team coordination with low latency for optimal performance in dynamic matches.',
                 duration: '3 Months',
                 components: '10+ Components',
                 efficiency: '99% Uptime',
-                technologies: ['PLC', 'Sensors', 'Dashboard'],
+                technologies: [
+                    "Computer Vision System",
+                    "Omnidirectional Drive System", 
+                    "Embedded Control System",
+                    "Real-time Communication Protocol",
+                    "Power Management System",
+                    "Sensor Fusion & Navigation"
+                ],
                 badge: 'Industrial IoT',
                 icon: 'fas fa-industry',
-                caseStudy: 'assets/projects/industrial-monitor-case-study.pdf',
-                caseStudyName: 'Industrial_Monitor_Case_Study.pdf'
+                caseStudy: './project.html?id=4',
+                caseStudyName: './project.html?id=4'
             }
         ];
 
@@ -106,13 +113,10 @@ class ProjectsRotation {
                 </div>
                 <div class="project-actions">
                     <a href="${project.caseStudy}" class="btn btn-primary">
-                        <span>Download Case Study</span>
-                        <i class="fas fa-download"></i>
+                        <span>View Study</span>
+                     
                     </a>
-                    <button class="btn btn-secondary view-source-btn" data-project="${project.id}">
-                        <span>Source Code</span>
-                        <i class="fab fa-github"></i>
-                    </button>
+                   
                 </div>
             </div>
         `;
@@ -140,10 +144,7 @@ class ProjectsRotation {
                     <div class="project-meta">
                         <span>${project.technologies.join(' • ')}</span>
                     </div>
-                    <a href="${project.caseStudy}" download="${project.caseStudyName}" class="btn-download-mini">
-                        <i class="fas fa-download"></i>
-                        Download Case Study
-                    </a>
+                   
                 </div>
             </div>
         `).join('');
